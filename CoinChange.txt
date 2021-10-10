@@ -1,0 +1,28 @@
+coins = [1,2]
+Amount = 2
+output -> 1
+
+dp[] = [3,3,3]
+
+dp[0] = 0; //the coins needed to make 0 dollars
+dp[] = [0,1,1]
+
+i = 0 to 2
+	j = 0 to 2 
+		if(coins[0] <= 0) -> flase
+	j = 1
+		if(coins[1] <= 0) -> false
+i = 1
+	j = 0 to 2
+		if(coins[0] <= 1) -> if( 1 <= 1) -> dp[1] = min(dp[1], 1+dp[1-1]) = min(3, 1+0) = 1
+	 j = 1 
+		if(coins[1] <= 1) -> if( 2 <= 1) - false
+
+i = 2:
+	j = 0 to 2:
+		if(coins[0] <= 2) -> 1<=2 -> dp[2] = min(dp[2], 1+dp[2-1])=  1
+	
+	j=1 to 2 :
+		if(coins[1] <= 2) -> dp[2] = Min(dp[2], 1+dp[2-2]) = 1
+
+return dp[2] > 2? ->NO return 2
